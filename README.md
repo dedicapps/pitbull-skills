@@ -16,9 +16,44 @@ Domain context for the Pitbull DNA loyalty program. Covers:
 - V1 endpoints and test patterns
 - Feature roadmap
 
+---
+
 ## Installation
 
-Add to your `~/.claude/settings.json`:
+### Step 1 — Register the marketplace
+
+Open `~/.claude/settings.json` and add `pitbull-skills` to `extraKnownMarketplaces`:
+
+```json
+{
+  "extraKnownMarketplaces": {
+    "pitbull-skills": {
+      "source": {
+        "source": "github",
+        "repo": "dedicapps/pitbull-skills"
+      }
+    }
+  }
+}
+```
+
+> If you already have `extraKnownMarketplaces` (e.g. `pm-skills`), just add the `pitbull-skills` key alongside the existing ones.
+
+### Step 2 — Enable the plugin
+
+In the same `settings.json`, add the plugin to `enabledPlugins`:
+
+```json
+{
+  "enabledPlugins": {
+    "pitbull-dna-loyalty@pitbull-skills": true
+  }
+}
+```
+
+> Again, if you already have other plugins enabled, just add this key to the existing object.
+
+### Full example `settings.json` snippet
 
 ```json
 {
@@ -36,13 +71,28 @@ Add to your `~/.claude/settings.json`:
 }
 ```
 
-## Usage
+### Step 3 — Activate in your project's CLAUDE.md
 
-Add to your project's `CLAUDE.md` under **Skills Activation**:
+Add the following line under the **Skills Activation** section in the project's `CLAUDE.md`:
 
 ```md
 - `pitbull-dna-loyalty` — ALWAYS activate at the start of every session in this project.
+  Contains full domain context for the Pitbull DNA loyalty platform.
 ```
+
+### Step 4 — Restart Claude Code
+
+Restart Claude Code (or open a new session) so it picks up the updated settings and fetches the plugin from GitHub.
+
+---
+
+## Updating the skill
+
+1. Edit `pitbull-dna-loyalty/skills/pitbull-dna-loyalty/SKILL.md` in this repo
+2. Commit and push to `main`
+3. All team members get the update on their next Claude Code session
+
+---
 
 ## Repos using this plugin
 
