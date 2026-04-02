@@ -1,0 +1,19 @@
+{
+  "name": "pitbull-dna-loyalty",
+  "version": "1.0.0",
+  "description": "Pitbull DNA loyalty program context: tier system, models, services, auth, API conventions, and roadmap for the loyalty-api and loyalty-app projects.",
+  "author": {
+    "name": "Pitbull / dedicapps",
+    "url": "https://github.com/dedicapps"
+  },
+  "keywords": [
+    "pitbull",
+    "loyalty",
+    "dna",
+    "tier",
+    "points",
+    "laravel",
+    "react-native"
+  ],
+  "license": "UNLICENSED"
+}
